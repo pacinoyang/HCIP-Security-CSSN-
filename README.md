@@ -9,18 +9,6 @@ NGFW全局环境感知ACTUAL: Application Content Time User Attack Location
 RBL由RBL服务提供商提供。
 邮件内容封装在SMTP中，则执行发送方向检测。若封装在POP3或者IMAP中，则执行接收方向检测。
 
-HTTP请求报文：
-请求行(Request Line: 方法/URL/HTTP版本)
-请求头部(Header: 关键字：值)
-空行 （回车换行符，通知服务器不再有请求）
-请求数据（在POST中使用，填写表单）
-
-HTTP响应报文：
-状态行（HTTP版本/数字状态代码/状态描述短语）
-消息报头（服务器：Content-Type）
-响应数据
-每行结束都要 \r\n 是CRLF
-
 Cookie是由Web服务器发出，在HTTP响应消息头中附带传给浏览器的数据，可以不相同。一旦保存，浏览器将在每次访问该服务器时回传该数据。
 Session是应用服务器维持的服务器端的存储空间。
 用户请求Session时要求带上Cookie信息，服务器通过Session ID读取，返回信息。抓包工具可以盗用Session。为提高安全和可靠性，可以设置过期，增加签名内容，或者限制用户IP等等。
@@ -107,6 +95,8 @@ NIP配置步骤：
 携带对象：可执行文件、脚本、宏、引导区。
 恶意代码功能：病毒、蠕虫、木马。
 
+![picture](Virus.png)
+
 反病毒技术：
 单机基于软件：特征码技术、行为查杀技术；
 网关基于设备：IAE：代理扫描、流扫描方式。
@@ -125,7 +115,24 @@ AV配置宣告信息：SMTP、POP3、HTTP（仅阻断宣告无删除附件）。
               ---单包攻击:畸形报文攻击、特殊报文攻击、扫描窥探攻击
 
 TCP/IP协议栈安全风险
+
+HTTP请求报文：
+请求行(Request Line: 方法/URL/HTTP版本)
+请求头部(Header: 关键字：值)
+空行 （回车换行符，通知服务器不再有请求）
+请求数据（在POST中使用，填写表单）
+
+HTTP响应报文：
+状态行（HTTP版本/数字状态代码/状态描述短语）
+消息报头（服务器：Content-Type）
+响应数据
+每行结束都要 \r\n 是CRLF
+
+
 ![picture](Risks.png)
+![picture](TCPIP.jpg)
+
+
 应用层：内容安全、注入漏洞、跨站脚本XSS、跨站请求伪造CSRF
 传输层：TCP/UDP拒绝服务、端口扫描...
 网络层攻击：地址扫描，IP欺骗...
