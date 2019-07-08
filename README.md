@@ -130,7 +130,7 @@ HTTP响应报文：
 
 
 ![picture](Risks.png)
-![picture](TCPIP.jpg)
+![picture](TCPIP.JPG)
 
 
 应用层：内容安全、注入漏洞、跨站脚本XSS、跨站请求伪造CSRF
