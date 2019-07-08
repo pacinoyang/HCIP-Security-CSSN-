@@ -125,6 +125,7 @@ AV配置宣告信息：SMTP、POP3、HTTP（仅阻断宣告无删除附件）。
               ---单包攻击:畸形报文攻击、特殊报文攻击、扫描窥探攻击
 
 TCP/IP协议栈安全风险
+<img src="Risks.png" alt="Risks" width="460" height="345">
 应用层：内容安全、注入漏洞、跨站脚本XSS、跨站请求伪造CSRF
 传输层：TCP/UDP拒绝服务、端口扫描...
 网络层攻击：地址扫描，IP欺骗...
@@ -145,8 +146,8 @@ URPF单播逆向路径转发，防止基于源地址欺骗的网络攻击行为�
 
 流量型攻击防御原理
 DDoS通用攻击防范：首包丢弃（TCP、DNS、ICMP、UDP【需要配置应用层协议】）、阻断和限流、
-过滤器（IP、TCP、UDP、HTTP、DNS、ICMP、SIP）、黑白名单
-TCP类
+过滤器（IP、TCP、UDP、HTTP、DNS、ICMP、SIP）、静态或动态黑白名单。
+TCP类：源认证（SYN Flood攻击）、SYN/SYN-ACK/ACK报文速率超过阀值进行检查。
 UDP类
 DNS类
 HTTP&HTTPS类
