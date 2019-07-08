@@ -125,7 +125,7 @@ AV配置宣告信息：SMTP、POP3、HTTP（仅阻断宣告无删除附件）。
               ---单包攻击:畸形报文攻击、特殊报文攻击、扫描窥探攻击
 
 TCP/IP协议栈安全风险
-<img src="Risks.png" alt="Risks" width="460" height="345">
+![picture](Risks.png)
 应用层：内容安全、注入漏洞、跨站脚本XSS、跨站请求伪造CSRF
 传输层：TCP/UDP拒绝服务、端口扫描...
 网络层攻击：地址扫描，IP欺骗...
