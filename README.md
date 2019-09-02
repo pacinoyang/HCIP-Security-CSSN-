@@ -133,7 +133,9 @@ HTTP响应报文：
 
 ![picture](Risks.png)
 ![picture](TCPIP.JPG)
+
 SYN SYN ACK
+
 FIN ACK FIN ACK
 
 应用层：内容安全、注入漏洞、跨站脚本XSS、跨站请求伪造CSRF
@@ -143,6 +145,7 @@ FIN ACK FIN ACK
 物理层：设备破坏、线路侦听
 
 流量攻击最通常的形式是Flood方式，DDoS拒绝服务是流量型攻击的典型方式。
+
 畸形报文攻击是指向目标发送有缺陷的IP报文，ping of death（超长icmp）、
 teardrop（重叠偏移伪造分段）、smurf(icmp)、fraggle(udp port 7/19)、
 land(syn-ack)、ip fragment(分片字段矛盾)、winnuke(Windows NetBios 端口139片段重叠、IGMP分片报文处理问题)
@@ -157,12 +160,16 @@ URPF单播逆向路径转发，防止基于源地址欺骗的网络攻击行为�
 流量型攻击防御原理
 DDoS通用攻击防范：首包丢弃（TCP、DNS、ICMP、UDP【需要配置应用层协议】）、阻断和限流、
 过滤器（IP、TCP、UDP、HTTP、DNS、ICMP、SIP）、静态或动态黑白名单。
+
 ·TCP类：源认证、SYN/SYN-ACK/ACK/FIN/RST报文速率超过阀值进行会话检查、载荷检查（ACK报文载荷不会完全一致，一致则丢弃）
+
 ·UDP类：报文负载一般保持不变或有规律：关联防御（防御TCP来防御UDP）、载荷检查（UDP流量是否超过阈值）和指纹学习。
+
 ·DNS类:
 Request Flood(针对缓存服务器或针对授权服务器的攻击）可以是虚假源也可以是真实源。
 针对虚假源：请求达到阈值后开启源认证（基本模式要求TCP，增强模式自己当代理转UDP发送，被动模式把每个源的首包丢弃触发重传），被动模式首包丢弃是首选。
 针对真实源：请求报文限速，DNS报文检测。
+
 ·HTTP&HTTPS类：
 源认证（META刷新，验证码，302重定向），源统计定位异常源，目的IP的URI检测和指纹学习。
 针对慢速攻击判断并加入动态黑名单：1. 连续多个POST报文长度大但载荷长度小。2.连续多个GET/POST报文头都没有结束标识。
