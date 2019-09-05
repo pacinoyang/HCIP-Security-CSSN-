@@ -184,4 +184,10 @@ Request Flood(针对缓存服务器或针对授权服务器的攻击）可以是
 7.突发流量：智能限速。
 
 Anti-DDoS防御系统三要素：管理中心ATIC、检测中心、清洗中心。
-Anti-DDoS方案按检测方式：逐包检测和NetFlow检测。
+Anti-DDoS方案按检测方式：AntiDDoS逐包检测和NFA组件NetFlow逐流检测。
+
+旁路部署回注方案：1. BGP动态路由引流无人工干预。2.策略路由不依赖路由协议适合所有网络。
+
+防火墙主要攻防技术：1.源探测技术（SYN HTTP/S DNS Flood）2. 指纹技术特征学习（UDP Flood）3.限流技术（ICMP UDP Flood）
+
+云安全
